@@ -61,15 +61,38 @@ git commit -m "Describe your changes"
 git push
 ```
 
-For SSH authentication on macOS, create a key, add its public key to **GitHub → Settings → SSH and GPG keys**, and point the repository remote at its SSH URL:
+## GitHub authentication with SSH (macOS)
+
+Create an SSH key if you do not already have one. Keep the private key secret:
 
 ```bash
 ssh-keygen -t ed25519 -C "GitHub SSH key" -f ~/.ssh/github_ed25519
-eval "$(ssh-agent -s)"
-ssh-add --apple-use-keychain ~/.ssh/github_ed25519
 pbcopy < ~/.ssh/github_ed25519.pub
-git remote set-url origin git@github.com:JaskiratTakhar24/Learning-Python-FreeCodeCamp.git
+```
+
+In GitHub, add the copied public key under **Settings → SSH and GPG keys → New SSH key**. Never upload or share `~/.ssh/github_ed25519` (the private key).
+
+Configure macOS SSH to use the key and remember its passphrase in Keychain. Create or edit `~/.ssh/config` and add:
+
+```sshconfig
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/github_ed25519
+```
+
+Load the key into the SSH agent, then test authentication:
+
+```bash
+ssh-add --apple-use-keychain ~/.ssh/github_ed25519
 ssh -T git@github.com
 ```
 
-Only add the `.pub` public key to GitHub. Keep the private key (`~/.ssh/github_ed25519`) secret.
+Use the repository's SSH URL (only needed if `origin` is still set to HTTPS), then push:
+
+```bash
+git remote set-url origin git@github.com:JaskiratTakhar24/Learning-Python-FreeCodeCamp.git
+git push
+```
+
+Once configured, the key should be used automatically for later pushes. You do not need to generate a new key for each push.
