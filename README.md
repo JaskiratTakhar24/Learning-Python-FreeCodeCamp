@@ -163,3 +163,19 @@ python -m uvicorn learning_python.api:app --reload --app-dir src --port 8001
 Open the local app at [http://127.0.0.1:8000](http://127.0.0.1:8000), or use port `8001` if you selected it above. FastAPI's interactive API documentation is at `/docs` (for example, [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)).
 
 To stop the server, focus its Terminal session and press **Control+C**. To leave the virtual environment, run `deactivate`.
+
+## Check a lesson with Pylint
+
+With the project's virtual environment activated, install Pylint:
+
+```bash
+python -m pip install pylint
+```
+
+From the project root, run Pylint on the function lesson:
+
+```bash
+python -m pylint src/learning_python/lessons/function.py
+```
+
+Pylint reports potential code and style issues, such as missing docstrings or a missing final newline. Review its suggestions and rerun it after making changes.
