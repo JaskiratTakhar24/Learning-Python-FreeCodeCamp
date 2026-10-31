@@ -96,3 +96,70 @@ git add .
 git commit -m "Describe your changes"
 git push
 ```
+
+## Build and run the FastAPI app locally
+
+These steps add a small web API to the learning project. Run the commands from the project root.
+
+### 1. Create and activate a virtual environment
+
+If you have not already created one for this checkout:
+
+```bash
+python3 -m venv .venv
+```
+
+Activate it in each new Terminal session before running the app:
+
+```bash
+source .venv/bin/activate
+```
+
+When active, the prompt usually starts with `(.venv)`.
+
+### 2. Install FastAPI and Uvicorn
+
+```bash
+python -m pip install fastapi "uvicorn[standard]"
+```
+
+FastAPI provides the web framework. Uvicorn runs the app as a local web server.
+
+### 3. Create the API module
+
+Create `src/learning_python/api.py` with this starter app:
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+def home():
+    return {"message": "Hello from my first FastAPI app!"}
+```
+
+The `@app.get("/")` route handles requests to the home path and returns a JSON response.
+
+### 4. Start the development server
+
+From the project root, run:
+
+```bash
+python -m uvicorn learning_python.api:app --reload --app-dir src
+```
+
+`--app-dir src` tells Uvicorn where to find the `learning_python` package. `--reload` restarts the server when you save code changes. Keep this Terminal session open while using the app.
+
+If you see `Address already in use` (Errno 48), another process is already using port 8000. Stop your other server with **Control+C**, or choose a different port:
+
+```bash
+python -m uvicorn learning_python.api:app --reload --app-dir src --port 8001
+```
+
+### 5. Open and stop the app
+
+Open the local app at [http://127.0.0.1:8000](http://127.0.0.1:8000), or use port `8001` if you selected it above. FastAPI's interactive API documentation is at `/docs` (for example, [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)).
+
+To stop the server, focus its Terminal session and press **Control+C**. To leave the virtual environment, run `deactivate`.
