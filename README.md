@@ -50,17 +50,6 @@ Deactivate the virtual environment when finished:
 deactivate
 ```
 
-## Publish changes to GitHub
-
-After editing files, review, commit, and push your changes:
-
-```bash
-git status
-git add .
-git commit -m "Describe your changes"
-git push
-```
-
 ## GitHub authentication with SSH (macOS)
 
 Create an SSH key if you do not already have one. Keep the private key secret:
@@ -96,3 +85,14 @@ git push
 ```
 
 Once configured, the key should be used automatically for later pushes. You do not need to generate a new key for each push.
+
+## Publish changes to GitHub
+
+After editing files, review, commit, and push your changes:
+
+```bash
+git status
+git add .
+git commit -m "Describe your changes"
+git push
+```
