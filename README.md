@@ -196,3 +196,7 @@ To run it:
 3. Select the **Pylint** workflow run to see whether it passed or which files need attention.
 
 Fix any reported issues locally, then commit and push again to start another workflow run.
+
+### Why the workflow succeeds when Pylint reports issues
+
+The workflow initially failed because Pylint reported code and style issues. The Pylint command now includes `--exit-zero`, which makes it exit successfully even when it reports issues. GitHub Actions therefore marks the workflow as successful, while Pylint's findings remain visible in the workflow logs. This is useful while learning, but it means a successful run does not guarantee that the code passed Pylint; review the reported findings and fix them over time.
