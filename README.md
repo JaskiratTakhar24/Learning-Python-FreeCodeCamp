@@ -179,3 +179,20 @@ python -m pylint src/learning_python/lessons/function.py
 ```
 
 Pylint reports potential code and style issues, such as missing docstrings or a missing final newline. Review its suggestions and rerun it after making changes.
+
+## Run Pylint automatically with GitHub Actions
+
+The workflow in `.github/workflows/pylint.yml` runs automatically whenever you push commits to GitHub. It sets up Python 3.8, 3.9, and 3.10, installs Pylint, and checks all tracked Python files.
+
+To run it:
+
+1. Commit and push your changes:
+   ```bash
+   git add .
+   git commit -m "Describe your changes"
+   git push
+   ```
+2. In your GitHub repository, open the **Actions** tab.
+3. Select the **Pylint** workflow run to see whether it passed or which files need attention.
+
+Fix any reported issues locally, then commit and push again to start another workflow run.
