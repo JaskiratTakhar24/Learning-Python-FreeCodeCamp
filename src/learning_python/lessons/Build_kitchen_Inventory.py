@@ -40,3 +40,6 @@ def make_fried_egg(available_eggs):
 
 
 available_eggs = make_fried_egg(available_eggs)
+
+
+check_kitchen_stock()
