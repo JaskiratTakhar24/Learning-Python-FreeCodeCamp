@@ -200,3 +200,7 @@ Fix any reported issues locally, then commit and push again to start another wor
 ### Why the workflow succeeds when Pylint reports issues
 
 The workflow initially failed because Pylint reported code and style issues. The Pylint command now includes `--exit-zero`, which makes it exit successfully even when it reports issues. GitHub Actions therefore marks the workflow as successful, while Pylint's findings remain visible in the workflow logs. This is useful while learning, but it means a successful run does not guarantee that the code passed Pylint; review the reported findings and fix them over time.
+
+### Node.js runtime warning in GitHub Actions
+
+GitHub Actions uses Node.js internally to run workflow actions; this is separate from the Python versions used by the project. The Pylint workflow uses `actions/checkout@v5` and `actions/setup-python@v6`, which support Node.js 24 and avoid the Node.js 20 deprecation warning. The Python version matrix remains independent of the Node.js runtime used by these actions.
