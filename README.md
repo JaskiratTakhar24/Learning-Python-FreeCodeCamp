@@ -182,7 +182,7 @@ Pylint reports potential code and style issues, such as missing docstrings or a 
 
 ## Run Pylint automatically with GitHub Actions
 
-The workflow in `.github/workflows/pylint.yml` runs automatically whenever you push commits to GitHub. It sets up Python 3.8, 3.9, and 3.10, installs Pylint, and checks all tracked Python files.
+The workflow in `.github/workflows/pylint.yml` runs automatically whenever you push commits to GitHub. It sets up Python 3.10, 3.11, and 3.13, installs Pylint and FastAPI, and checks all tracked Python files.
 
 To run it:
 
