@@ -204,3 +204,7 @@ The workflow initially failed because Pylint reported code and style issues. The
 ### Node.js runtime warning in GitHub Actions
 
 GitHub Actions uses Node.js internally to run workflow actions; this is separate from the Python versions used by the project. The Pylint workflow uses `actions/checkout@v5` and `actions/setup-python@v6`, which support Node.js 24 and avoid the Node.js 20 deprecation warning. The Python version matrix remains independent of the Node.js runtime used by these actions.
+
+### Ubuntu runner version
+
+The workflow previously used the moving `ubuntu-latest` runner label, which triggered a warning that it would migrate to Ubuntu 26. To make the runner version explicit and avoid an unexpected operating-system change, `.github/workflows/pylint.yml` now uses `runs-on: ubuntu-24.04`. This keeps the Pylint job on Ubuntu 24.04; update this label intentionally when you decide to move to a newer runner.
