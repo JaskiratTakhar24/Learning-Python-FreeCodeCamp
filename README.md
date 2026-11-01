@@ -211,7 +211,7 @@ The workflow previously used the moving `ubuntu-latest` runner label, which trig
 
 ## Format a lesson with Ruff
 
-Ruff was used to format `src/learning_python/lessons/function.py` and address many of the style warnings reported by Pylint. With the virtual environment activated, install Ruff and format that file from the project root:
+Ruff was used to format `src/learning_python/lessons/build_kitchen_inventory.py` and address many of the style warnings reported by Pylint. With the virtual environment activated, install Ruff and format that file from the project root:
 
 ```bash
 python -m pip install ruff
