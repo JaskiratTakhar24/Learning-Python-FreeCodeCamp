@@ -24,7 +24,7 @@ def use_eggs(available_eggs, eggs_to_use):
 
 
 use_eggs(available_eggs, 1)
-print(available_eggs)
+print(available_eggs) # This will still print 1 because the value of available_eggs was not updated
 
 
 def make_fried_egg(available_eggs):
@@ -43,3 +43,5 @@ available_eggs = make_fried_egg(available_eggs)
 
 
 check_kitchen_stock()
+
+make_fried_egg(available_eggs)
