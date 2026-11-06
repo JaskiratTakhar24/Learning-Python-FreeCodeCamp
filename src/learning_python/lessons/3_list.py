@@ -44,4 +44,6 @@ print(numbers[1:4])
 
 list_to_sort = [2,4,2,543,5,7,4,5,6,3,6,7]
 list_to_sort.sort()
+# Remember sort() method which sorts the elements of a list in place and does not return a new list.
+#It mens your orignal list has been now sort and the values have changed after sort
 print(list_to_sort)

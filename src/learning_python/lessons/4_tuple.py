@@ -27,3 +27,17 @@ print(f'Modified tuple with convert to list, delete, convert back to t = {t}')
 print(f'Print all the indexes of the number 2 in the tuple t')
 indexes = [i for i, x in enumerate(t) if x == 2]
 print(indexes)
+
+
+# Two functions can be used to sort any iterable list but only sorted() function can be used to sort an iterable tuple
+# sort(), sorted()
+# sort() method sorts the elements of a list in place an does not return a new list
+# The sorted() function will always create a new list of the sorted values.
+# This differs from the sort() method which sorts the elements of a list in place and does not return a new list.
+
+programming_languages = ('Rust', 'Java', 'Python', 'C++', 'Rust', 'Python')
+print(f'Programming languages tuple  = {programming_languages}')
+sorted_programming_languages = sorted(programming_languages, key=len) #Sorted always create a new list of the values -- it means the orignal variable remains unchanged
+print(f'After sorted() Programming languages tuple {sorted_programming_languages} ')
+# Result
+# ['C++', 'Rust', 'Java', 'Rust', 'Python', 'Python']
