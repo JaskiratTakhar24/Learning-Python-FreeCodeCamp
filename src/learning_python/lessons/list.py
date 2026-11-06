@@ -26,7 +26,16 @@ list(developer)  # Output: ['P', 'y', 't', 'h', 'o', 'n', ' ', 'D', 'e', 'v', 'e
 nested_list = [[1,2,3], [4,5,6], [7,8,9]]
 nested_list[0] # Output: [1,2,3]
 
-developer = ['Alice', 25, ['Python', 'Rust', 'C++']]
+developer = ['Alice', 25, ['Python', 'Rust', 'C++'], 'Jaskirat']
 developer[2] # ['Python', 'Rust', 'C++']
 
-print(developer[2][0]) # Output: 25
+print(developer[3]) # Output: Jaskirat
+
+#how about assigning the value of the nested list to a variable and then accessting the elements of the nested list using the varibles?
+
+name, age, *skills, mentor = developer
+print(f"Skills: {skills[0][2]}")
+
+#Slicing lists
+numbers = [1, 2, 3, 4, 5, 6,7,8,9,10]
+print(numbers[1:4])
