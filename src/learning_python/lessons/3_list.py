@@ -39,3 +39,9 @@ print(f"Skills: {skills[0][2]}")
 #Slicing lists
 numbers = [1, 2, 3, 4, 5, 6,7,8,9,10]
 print(numbers[1:4])
+
+#sorting a list
+
+list_to_sort = [2,4,2,543,5,7,4,5,6,3,6,7]
+list_to_sort.sort()
+print(list_to_sort)
