@@ -15,3 +15,15 @@ print(developer_tuple) # Output: ('Python', 'Developer', 24, 'Jaskirat')
 
 deserts = ('cake', 'pie', 'cookie', 'ice cream')
 deserts = deserts[1:] # Output: ('pie', 'cookie', 'ice cream')
+
+#or convert it into a list and convert it back into a tuple
+
+t = (1,2,3,4,2,2,2,24,45,5,6,7,2)
+print(f'orignal tuple t = {t}') 
+temp = list(t)
+temp.remove(2) # remove by value (or use del temp[1] for by index)
+t = tuple(temp) #Output (1,3,4,...,2)
+print(f'Modified tuple with convert to list, delete, convert back to t = {t}')
+print(f'Print all the indexes of the number 2 in the tuple t')
+indexes = [i for i, x in enumerate(t) if x == 2]
+print(indexes)
